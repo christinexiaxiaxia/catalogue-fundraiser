@@ -1,0 +1,288 @@
+@font-face {
+	font-family: GT Super Display;
+	src: url("fonts/GTSuperDisplay.otf");
+	src: url("fonts/GTSuperDisplaySuper-Regular.woff") format('woff'), 
+		 url("fonts/GTSuperDisplaySuper-Regular.woff") format('woff2')
+}
+
+@font-face {
+	font-family: GT Super Text;
+	src: url("fonts/GTSuperText-Book.otf");
+}
+
+@font-face {
+	font-family: GT Super Text Italic;
+	src: url("fonts/GTSuperText-BookItalic.otf");
+}
+
+
+
+
+/*STRUCTURES*/
+
+* {
+	/*color: rgb(0,255,0);*/
+
+	font-family: GT Super Text;
+	font-size: 24px;
+	font-variant-numeric: lining-nums;
+
+	cursor: crosshair;
+}
+
+::-webkit-scrollbar { /* WIDTH */
+	width: 0.4rem;
+	height: 0.4rem;
+}
+
+::-webkit-scrollbar-track { /* BACKGROUND */
+	background: white; 
+}
+
+::-webkit-scrollbar-thumb { /* HANDLE */
+	background: rgb(0,255,0); 
+}
+
+::-moz-selection {
+	background-color: rgba(0,255,0,0.99);
+	color: rgba(0,0,0,0);
+}
+
+::selection {
+	background-color: rgba(0,255,0,0.99);
+	color: rgba(0,0,0,1);
+}
+
+body {
+	margin: 2rem;
+
+	/*background-color: black;*/
+	/*background-image: url("../img/bg.jpg");*/
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+a {
+	cursor: alias;
+	color: rgb(0,255,0);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: line-through;
+}
+
+.category {
+	display: grid;
+	grid-template: auto / 6rem 1fr;
+
+	margin-top: 3rem;
+}
+
+.container {
+	width: 100%;
+
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: auto;
+	grid-gap: 1rem;
+}
+
+.item {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: auto;
+	grid-gap: 1rem;
+	grid-column-start: 1;
+	grid-column-end: 4;
+
+	margin-bottom: 2rem;
+}
+
+
+
+/*IMAGES*/
+
+img {
+	width: 100%;
+	margin-bottom: -0.25rem;
+	filter: grayscale(100);
+}
+
+.image {
+	margin-top: 0.3rem;
+	margin-bottom: -0.3rem;
+	border: solid rgb(0,255,0) 0.2rem;
+	overflow: hidden;
+
+	text-align: center;
+}
+
+.image.port {
+	/*height: 40.5vw;*/
+}
+
+.image.land {
+	grid-column-start: 1;
+	grid-column-end: 3;
+}
+
+.image.connie-wide {
+	grid-column-start: 1;
+	grid-column-end: 4;
+}
+
+.image:hover img {
+	filter: grayscale(0);
+}
+
+.cross {
+	margin: -1rem;
+	height: calc(100% + 2rem);
+	width: calc(100% + 2.5vw);
+}
+
+
+
+/*TYPOGRAPHY*/
+
+h1 {
+	font-family: GT Super Display;
+	font-size: 5rem;
+	font-weight: normal;
+	letter-spacing: -0.1rem;
+	line-height: 5rem;
+	color: rgb(0,255,0);
+
+	margin-top: 0;
+	margin-bottom: 2rem;
+}
+
+.desc {
+	margin: 0;
+
+	grid-column-start: 1;
+	grid-column-end: 4;
+}
+
+.desc.main {
+	margin-left: 6rem;
+}
+
+.header {
+	margin: -1rem 0rem 0rem -1rem;
+
+	font-family: GT Super Display;
+	font-size: 5rem;
+	letter-spacing: -1rem;
+	writing-mode: vertical-lr;
+	text-orientation: upright;
+	color: rgb(0,255,0);
+}
+
+.highlight {
+	text-decoration: underline rgb(0,255,0);
+}
+
+.highlight:hover {
+	background-color: rgb(0,255,0);
+}
+
+
+
+/*X LINES*/
+
+.line {
+	width: 0px;
+	height: 100%;
+
+	outline: solid rgb(0,255,0) 0.2rem;
+	transform: skewX(35deg);
+	transform-origin: 0% 0%;
+}
+
+
+
+
+@media only screen and (max-width: 800px) {
+
+	.category {
+		display: grid;
+		grid-template: auto / 1fr;
+
+		margin-top: 3rem;
+
+		width: calc(100vw - 4rem - 0.4rem);
+	}
+
+	.container {
+		grid-template-columns: 1fr;
+	}
+
+	.item {
+		display: inline-block;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+		grid-gap: 1rem;
+		grid-column-start: 1;
+		grid-column-end: 1;
+
+		margin-bottom: 2rem;
+	}
+
+	.image {
+		margin-bottom: 1rem;
+	}
+
+
+	.image.port {
+		height: 70vh;
+		width: calc(100vw - 4rem - 0.4rem);
+	}
+
+	.image.land {
+		grid-column-start: 1;
+		grid-column-end: 1;
+	}
+
+	.image.connie-wide {
+		width: calc(100vw - 4rem);
+	}
+
+	.image-line {
+		display: none;
+	}
+
+	.image-line {
+		display: none;
+	}
+
+	h1 {
+		font-size: 2.5rem;
+		line-height: 2.5rem;
+	}
+
+	.desc.main {
+		margin-left: 0;
+	}
+
+	.desc {
+	}
+
+	.header {
+		margin: 0;
+		margin-bottom: 1rem;
+
+		font-family: GT Super Display;
+		font-size: 2.5rem;
+		letter-spacing: 0rem;
+		writing-mode: initial;
+		text-orientation: initial;
+	}
+
+	img {
+		filter: grayscale(0);
+	}
+}
